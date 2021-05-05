@@ -69,7 +69,7 @@ describe('RestaurantList', () => {
     });
   });
 
-  describe('when loading fails', () => {
+  /* describe('when loading fails', () => {
     beforeEach(() => {
       mountWithStore({loadError: true});
     });
@@ -89,8 +89,6 @@ describe('RestaurantList', () => {
     it('clears the loading flag', () => {
       expect(store.state.restaurants.loading).toEqual(false);
     });
-
-
-  });
+  }); */
 
 });

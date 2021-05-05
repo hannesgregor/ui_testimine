@@ -18,6 +18,12 @@ const restaurants = (api, stateOverrides) => ({
           commit('recordLoadingError');
         });
     },
+    create({commit}, newRestaurantName) {
+      return api.createRestaurant(newRestaurantName).then(record => {
+        commit('addRecord', record);
+      });
+    },
+    
   },
 
   mutations: {
@@ -32,6 +38,9 @@ const restaurants = (api, stateOverrides) => ({
     storeRecords(state, records) {
       state.records = records;
       state.loading = false;
+    },
+    addRecord(state, record) {
+      state.records.push(record);
     },
   },
 });
